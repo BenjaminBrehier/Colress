@@ -1,0 +1,320 @@
+<!--Site par Exe2Glace-->
+<html lang="fr">
+
+    <head>
+        <title>Colress</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styles/styles.css">
+        <link rel="stylesheet" href="styles/style2.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="scripts/script.js"></script>
+
+        <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <link rel="icon" type="image/png" href="img/favicon.png" />
+
+        <script> 
+            function refresh(){
+                var t = 1000; // rafraîchissement en millisecondes
+                setTimeout('showDate()',t)
+            }
+            
+            function showDate() {
+                var date = new Date()
+                var h = date.getHours();
+                var m = date.getMinutes();
+                var s = date.getSeconds();
+                if( h < 10 ){ h = '0' + h; }
+                if( m < 10 ){ m = '0' + m; }
+                if( s < 10 ){ s = '0' + s; }
+                var time = h + ':' + m + ':' + s
+                document.getElementById('horloge').innerHTML = time;
+                refresh();
+             }
+
+             function relance() {
+                    setInterval(solution3, 4000);
+                    
+}
+
+function solution3() {
+    if(document.getElementById("img1").style.display == "none"){
+        $("#img1").fadeIn(1500);
+        document.getElementById("img2").style.display = "none"; 
+                   }else{
+                        $("#img2").fadeIn(1500);
+                        document.getElementById("img1").style.display = "none";  
+
+                   }
+}
+         </script>
+    </head>
+    <script type="text/javascript" src="https://cookie.eurowebpage.com/cookie.js?skin=cookielaw2&amp;position=bottom_left&amp;msg=En%20poursuivant%20votre%20navigation%20sur%20ce%20site%2C%20vous%20acceptez%20l'utilisation%20de%20Cookies%20pour%20pouvoir%20vous%20proposer%20tous%20les%20contenus%20de%20ce%20site%20!&amp;learnmore=Plus%20d'informations&amp;morelink=https%3A%2F%2Fwww.allaboutcookies.org%2Ffr%2Fcookies%2Fquelles-sont-les-informations-inscrites-dans-le-cookie.html&amp;accept_radius=18&amp;box_radius=39"></script><body>
+
+    <body onload=showDate();relance();>
+        <div class="loader">
+            <svg viewBox="0 0 600 300">
+                <symbol id="s-text">
+                  <text text-anchor="middle" x="50%" y="50%" dy=".35em">Colress</text>
+                </symbol>
+                <use class="text" xlink:href="#s-text"></use>
+                <use class="text" xlink:href="#s-text"></use>
+                <use class="text" xlink:href="#s-text"></use>
+                <use class="text" xlink:href="#s-text"></use>
+                <use class="text" xlink:href="#s-text"></use>
+              </svg>
+        </div>
+
+        <noscript>
+            <h1>Merci d'activer Javascript pour utiliser ce site.</h1>
+        </noscript>
+
+        <section id="Home">
+            <div class="contener">
+                <img id="fond" draggable="false" src="img/Semi.png" alt="">
+                <div class="slideshow"> 
+                    <span id='horloge' ></span>
+                    <span id="servers"><script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg==" crossorigin="anonymous"></script>
+                        <script>
+
+                        axios.get('https://colress-discord-bot.fr:6060/getstats').then(resp => {
+
+                            document.getElementById("servers").innerHTML = "Servers : " +resp.data.servers
+                        });
+                        
+                        </script></span>
+                    <ul>
+                        <li><img id="img1" src="img/firstimg.png" alt="" ></li>
+                        <li><img id="img2" src="img/secondimg.jpg" alt="" style="display: none;"></li>
+                    </ul>
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a class="" href="https://colress-discord-bot.fr/dashboard" target="_blank">Dashboard</a></li>
+                        <li><a class="" href="https://colress-discord-bot.fr/leaderboard" target="_blank">Leaderboard</a></li>
+                        <li><a id="nav_cmd" href="#CommandPagep">Commandes</a><a id="nav_cmd_Anglais" href="#CommandPagep">Commands</a></li>
+                        <li><a  href="#VideoPagePoint">Vidéos</a></li>
+                        <li><a class="" href="https://discord.gg/V3bwBTd" target="_blank">Support</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header">
+                    <input class="menu-btn" type="checkbox" id="menu-btn" />
+                    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+                    <ul class="menu">
+                      <li><a class="" href="https://colress-discord-bot.fr/dashboard" target="_blank">Dashboard</a></li>
+                      <li><a class="" href="https://colress-discord-bot.fr/leaderboard" target="_blank">Leaderboard</a></li>
+                      <li><a class="" href="https://discord.gg/V3bwBTd" target="_blank">Support</a></li>
+                    </ul>
+                  </div>
+
+                <ul id="other">
+                    <li id="LogoDisc"><img id="favi" draggable="false" src="img/favicon.png" alt="favicon" style="width: 15%;" ><a  href="https://discord.com/oauth2/authorize?client_id=730388800983007243&permissions=1342508096&scope=bot" target="_blank">   Colress</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="CommandPage">
+            <div class="contener" data-aos="fade-in" data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top-center">
+            <div id="CommandPagep"></div>
+                <div class="snow">
+                    <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 1024 700" preserveAspectRatio="xMidYMax slice">
+                        <g fill="#FFF" fill-opacity=".90" transform="translate(55 42)">
+                           <g class="snow-bottom-layer">
+                              <ellipse cx="6" cy="666.5" rx="6" ry="5.5"/>
+                              <ellipse cx="138" cy="456.5" rx="6" ry="5.5"/>
+                              <ellipse cx="398" cy="369.5" rx="6" ry="5.5"/>
+                              <ellipse cx="719" cy="159.5" rx="6" ry="5.5"/>
+                              <ellipse cx="760" cy="132.5" rx="6" ry="5.5"/>
+                              <ellipse cx="635" cy="147.5" rx="6" ry="5.5"/>
+                              <ellipse cx="478" cy="148.5" rx="6" ry="5.5"/>
+                              <ellipse cx="322" cy="158.5" rx="6" ry="5.5"/>
+                              <ellipse cx="247" cy="156.5" rx="6" ry="5.5"/>
+                              <ellipse cx="154" cy="147.5" rx="6" ry="5.5"/>
+                              <ellipse cx="731" cy="101.5" rx="6" ry="5.5"/>
+                              <ellipse cx="599" cy="129.5" rx="6" ry="5.5"/>
+                              <ellipse cx="339" cy="495.5" rx="6" ry="5.5"/>
+                              <ellipse cx="239" cy="472.5" rx="6" ry="5.5"/>
+                              <ellipse cx="113" cy="481.5" rx="6" ry="5.5"/>
+                              <ellipse cx="102" cy="462.5" rx="6" ry="5.5"/>
+                              <ellipse cx="395" cy="439.5" rx="6" ry="5.5"/>
+                              <ellipse cx="826" cy="429.5" rx="6" ry="5.5"/>
+                              <ellipse cx="626" cy="572.5" rx="6" ry="5.5"/>
+                              <ellipse cx="887" cy="568.5" rx="6" ry="5.5"/>
+                              <ellipse cx="6" cy="241.5" rx="6" ry="5.5"/>
+                              <ellipse cx="138" cy="342.5" rx="6" ry="5.5"/>
+                              <ellipse cx="398" cy="287.5" rx="6" ry="5.5"/>
+                              <ellipse cx="719" cy="516.5" rx="6" ry="5.5"/>
+                              <ellipse cx="760" cy="387.5" rx="6" ry="5.5"/>
+                              <ellipse cx="635" cy="691.5" rx="6" ry="5.5"/>
+                              <ellipse cx="478" cy="567.5" rx="6" ry="5.5"/>
+                              <ellipse cx="322" cy="646.5" rx="6" ry="5.5"/>
+                              <ellipse cx="247" cy="466.5" rx="6" ry="5.5"/>
+                              <ellipse cx="154" cy="657.5" rx="6" ry="5.5"/>
+                              <ellipse cx="731" cy="5.5" rx="6" ry="5.5"/>
+                              <ellipse cx="599" cy="106.5" rx="6" ry="5.5"/>
+                              <ellipse cx="339" cy="51.5" rx="6" ry="5.5"/>
+                              <ellipse cx="239" cy="236.5" rx="6" ry="5.5"/>
+                              <ellipse cx="113" cy="95.5" rx="6" ry="5.5"/>
+                              <ellipse cx="102" cy="455.5" rx="6" ry="5.5"/>
+                              <ellipse cx="395" cy="387.5" rx="6" ry="5.5"/>
+                              <ellipse cx="826" cy="175.5" rx="6" ry="5.5"/>
+                              <ellipse cx="626" cy="286.5" rx="6" ry="5.5"/>
+                              <ellipse cx="887" cy="598.5" rx="6" ry="5.5"/>
+                           </g>
+                        </g>
+                        <g fill="#444" fill-opacity=".3" transform="translate(65 63)">
+                           <g class="snow-top-layer">
+                              <circle cx="8" cy="720" r="8"/>
+                              <circle cx="189" cy="153" r="8"/>
+                              <circle cx="548" cy="175" r="8"/>
+                              <circle cx="685" cy="186" r="8"/>
+                              <circle cx="858" cy="234" r="8"/>
+                              <circle cx="874" cy="498" r="8" transform="rotate(180 874 498)"/>
+                              <circle cx="657" cy="124" r="8" transform="rotate(180 657 124)"/>
+                              <circle cx="443" cy="104" r="8" transform="rotate(180 443 104)"/>
+                              <circle cx="339" cy="107" r="8" transform="rotate(180 339 107)"/>
+                              <circle cx="24" cy="135" r="8" transform="rotate(180 24 135)"/>
+                              <circle cx="8" cy="8" r="8"/>
+                              <circle cx="189" cy="157" r="8"/>
+                              <circle cx="548" cy="76" r="8"/>
+                              <circle cx="685" cy="347" r="8"/>
+                              <circle cx="858" cy="141" r="8"/>
+                              <circle cx="874" cy="670" r="8" transform="rotate(180 874 670)"/>
+                              <circle cx="657" cy="488" r="8" transform="rotate(180 657 488)"/>
+                              <circle cx="443" cy="604" r="8" transform="rotate(180 443 604)"/>
+                              <circle cx="339" cy="339" r="8" transform="rotate(180 339 339)"/>
+                              <circle cx="24" cy="537" r="8" transform="rotate(180 24 537)"/>
+                           </g>
+                        </g>
+                    </svg>
+                </div>
+                <img class=".flotte" src="img/fond2.jpg" alt="">
+                
+
+                
+            
+                
+
+                <div id="ifloat" class="flotte" >
+                    <img id="ifloatFR" draggable="false" src="img/commandes2.png" alt=""/>
+                    <img id="ifloatAnglais" draggable="false" src="img/commandes2Anglaises.png" alt=""/>
+                </div>
+            </div>
+        </section>   
+
+        <section id="VideoPage">
+            <div class="contener">
+                <div id="VideoPagePoint"></div>
+                <div class="snow">
+                    <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 1024 700" preserveAspectRatio="xMidYMax slice">
+                        <g fill="#444" fill-opacity=".15" transform="translate(55 42)">
+                           <g class="snow-bottom-layer">
+                              <ellipse cx="6" cy="666.5" rx="6" ry="5.5"/>
+                              <ellipse cx="138" cy="456.5" rx="6" ry="5.5"/>
+                              <ellipse cx="398" cy="369.5" rx="6" ry="5.5"/>
+                              <ellipse cx="719" cy="159.5" rx="6" ry="5.5"/>
+                              <ellipse cx="760" cy="132.5" rx="6" ry="5.5"/>
+                              <ellipse cx="635" cy="147.5" rx="6" ry="5.5"/>
+                              <ellipse cx="478" cy="148.5" rx="6" ry="5.5"/>
+                              <ellipse cx="322" cy="158.5" rx="6" ry="5.5"/>
+                              <ellipse cx="247" cy="156.5" rx="6" ry="5.5"/>
+                              <ellipse cx="154" cy="147.5" rx="6" ry="5.5"/>
+                              <ellipse cx="731" cy="101.5" rx="6" ry="5.5"/>
+                              <ellipse cx="599" cy="129.5" rx="6" ry="5.5"/>
+                              <ellipse cx="339" cy="495.5" rx="6" ry="5.5"/>
+                              <ellipse cx="239" cy="472.5" rx="6" ry="5.5"/>
+                              <ellipse cx="113" cy="481.5" rx="6" ry="5.5"/>
+                              <ellipse cx="102" cy="462.5" rx="6" ry="5.5"/>
+                              <ellipse cx="395" cy="439.5" rx="6" ry="5.5"/>
+                              <ellipse cx="826" cy="429.5" rx="6" ry="5.5"/>
+                              <ellipse cx="626" cy="572.5" rx="6" ry="5.5"/>
+                              <ellipse cx="887" cy="568.5" rx="6" ry="5.5"/>
+                              <ellipse cx="6" cy="241.5" rx="6" ry="5.5"/>
+                              <ellipse cx="138" cy="342.5" rx="6" ry="5.5"/>
+                              <ellipse cx="398" cy="287.5" rx="6" ry="5.5"/>
+                              <ellipse cx="719" cy="516.5" rx="6" ry="5.5"/>
+                              <ellipse cx="760" cy="387.5" rx="6" ry="5.5"/>
+                              <ellipse cx="635" cy="691.5" rx="6" ry="5.5"/>
+                              <ellipse cx="478" cy="567.5" rx="6" ry="5.5"/>
+                              <ellipse cx="322" cy="646.5" rx="6" ry="5.5"/>
+                              <ellipse cx="247" cy="466.5" rx="6" ry="5.5"/>
+                              <ellipse cx="154" cy="657.5" rx="6" ry="5.5"/>
+                              <ellipse cx="731" cy="5.5" rx="6" ry="5.5"/>
+                              <ellipse cx="599" cy="106.5" rx="6" ry="5.5"/>
+                              <ellipse cx="339" cy="51.5" rx="6" ry="5.5"/>
+                              <ellipse cx="239" cy="236.5" rx="6" ry="5.5"/>
+                              <ellipse cx="113" cy="95.5" rx="6" ry="5.5"/>
+                              <ellipse cx="102" cy="455.5" rx="6" ry="5.5"/>
+                              <ellipse cx="395" cy="387.5" rx="6" ry="5.5"/>
+                              <ellipse cx="826" cy="175.5" rx="6" ry="5.5"/>
+                              <ellipse cx="626" cy="286.5" rx="6" ry="5.5"/>
+                              <ellipse cx="887" cy="598.5" rx="6" ry="5.5"/>
+                           </g>
+                        </g>
+                        <g fill="#444" fill-opacity=".3" transform="translate(65 63)">
+                           <g class="snow-top-layer">
+                              <circle cx="8" cy="720" r="8"/>
+                              <circle cx="189" cy="153" r="8"/>
+                              <circle cx="548" cy="175" r="8"/>
+                              <circle cx="685" cy="186" r="8"/>
+                              <circle cx="858" cy="234" r="8"/>
+                              <circle cx="874" cy="498" r="8" transform="rotate(180 874 1438)"/>
+                              <circle cx="657" cy="124" r="8" transform="rotate(180 657 1256)"/>
+                              <circle cx="443" cy="104" r="8" transform="rotate(180 443 1372)"/>
+                              <circle cx="339" cy="107" r="8" transform="rotate(180 339 1107)"/>
+                              <circle cx="24" cy="135" r="8" transform="rotate(180 24 1305)"/>
+                              <circle cx="8" cy="8" r="8"/>
+                              <circle cx="189" cy="157" r="8"/>
+                              <circle cx="548" cy="76" r="8"/>
+                              <circle cx="685" cy="347" r="8"/>
+                              <circle cx="858" cy="141" r="8"/>
+                              <circle cx="874" cy="670" r="8" transform="rotate(180 874 670)"/>
+                              <circle cx="657" cy="488" r="8" transform="rotate(180 657 488)"/>
+                              <circle cx="443" cy="604" r="8" transform="rotate(180 443 604)"/>
+                              <circle cx="339" cy="339" r="8" transform="rotate(180 339 339)"/>
+                              <circle cx="24" cy="537" r="8" transform="rotate(180 24 537)"/>
+                           </g>
+                        </g>
+                    </svg>
+                </div>
+                <img src="img/fond3.jpg" alt="">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/5eP6EMwNQSE" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section id="Bas">
+            <footer>
+                <div class="contener">
+                    <img id="Fond4" src="img/fond4.jpg" alt="">                    
+                    <h1>Colress</h1>
+                    <p id="copyright">Copyright &copy; Colress 2020. Tous droits réservés</p>
+                    <div id="bouton">
+                        <button id="Anglais" onclick="location.href='#CommandPagep';" ><img draggable="false" src="img/flag.png" style="width: 15%;" alt="Logo USA" ></button>
+                        <button id="FR" onclick="location.href='#CommandPagep';"><img draggable="false" src="img/france-flag-round-small.png" style="width: 15%;" alt="Logo FR" ></button>
+                        <button onclick="window.open('https://twitter.com/ColressDiscord', '_blank');"><img draggable="false" src="img/twitter.png" style="width: 15%;" alt="Logo twitter" ></button>
+                        <button onclick="location.href='#Home';"><img draggable="false" src="img/flecheIcon.png" style="width: 15%;" alt="fleche Icon" ></button>
+                    </div>
+                    
+                </div>
+            </footer>
+        </section>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
+        <script type="text/javascript">
+            $(window).load(function() {
+            $(".loader").fadeOut("1000"); })
+        </script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+    </body>
+</html>

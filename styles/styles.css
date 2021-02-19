@@ -1,0 +1,431 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+   list-style: none;
+}
+
+body {
+   background-color: rgb(30, 30, 30);
+   height: 100%;
+}
+
+html {
+   scroll-behavior: smooth;
+ }
+ 
+ @media (prefers-reduced-motion: reduce) {
+   html {
+     scroll-behavior: auto;
+   }
+ }
+
+ ::-webkit-scrollbar {
+   width: 0%;
+   background: transparent; /* make scrollbar transparent */
+}
+
+noscript {
+   margin-top: 10%;
+   text-align: center;
+   position: fixed;
+   z-index: 9999;
+   font-size: 25px;
+   color: #FFF;
+   background-color: red;
+   width: 100%;
+}
+
+/* nav mobile */
+  
+.header {
+   background-color: transparent;
+   top: 10%;
+   left: 50%;
+   position: absolute;
+   width: 50%;
+   z-index: 3;
+ }
+ 
+ .header ul {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+   overflow: hidden;
+   background-color: transparent;
+ }
+ 
+ .header li a { /*contour des lien dans le nav*/
+   display: block;
+   padding: 20px 20px;
+   border-right: 1px solid #f4f4f4;
+   text-decoration: none;
+   text-align: center;
+   font-size: 120%;
+   font-family: Bangers, Arial, Helvetica, sans-serif;
+   color: #FFF;
+ }
+ 
+ .header li a:hover,
+ .header .menu-btn:hover {
+   background-color: #f4f4f4;
+   color: aqua;
+ }
+ 
+
+ 
+ /* menu */
+ 
+ .header .menu {
+   clear: both;
+   max-height: 0;
+   transition: max-height .2s ease-out;
+ }
+ 
+ /* menu icon */
+ 
+ .header .menu-icon { /*contour bouton =*/
+   cursor: pointer;
+   display: inline-block;
+   float: right;
+   padding: 28px 20px;
+   position: relative;
+   user-select: none;
+ }
+ 
+ .header .menu-icon .navicon { /*apparence bouton =*/
+   background: #FFF;
+   display: block;
+   height: 2px;
+   position: relative;
+   transition: background .2s ease-out;
+   width: 18px;
+ }
+ 
+ .header .menu-icon .navicon:before,
+ .header .menu-icon .navicon:after { /*apparence bouton =*/
+   background: #FFF;
+   content: '';
+   display: block;
+   height: 100%;
+   position: absolute;
+   transition: all .2s ease-out;
+   width: 100%;
+ }
+ 
+ .header .menu-icon .navicon:before {
+   top: 5px;
+ }
+ 
+ .header .menu-icon .navicon:after {
+   top: -5px;
+ }
+ 
+ /* menu btn apparence menu déroulant*/
+ 
+ .header .menu-btn {
+   display: none;
+ }
+ 
+ .header .menu-btn:checked ~ .menu {
+   max-height: 240px;
+   background-color: #444;
+ }
+ 
+ .header .menu-btn:checked ~ .menu-icon .navicon {
+   background: transparent;
+ }
+ 
+ .header .menu-btn:checked ~ .menu-icon .navicon:before {
+   transform: rotate(-45deg);
+ }
+ 
+ .header .menu-btn:checked ~ .menu-icon .navicon:after {
+   transform: rotate(45deg);
+ }
+ 
+ .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+ .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+   top: 0;
+ }
+ 
+ 
+ @media (min-width: 1140px) {
+   .header li {
+     float: left;
+   }
+   .header li a {
+     padding: 20px 30px;
+   }
+   .header .menu {
+     clear: none;
+     float: right;
+     max-height: none;
+   }
+   .header .menu-icon {
+     display: none;
+   }
+ }
+ 
+ /* FIN nav mobile */
+
+#Home {
+
+    width: 100%;
+}
+#Home .contener #fond {
+    position: static; 
+    top: 0%; 
+    left: 0%; 
+    z-index: 1;
+    width: 100%;
+
+ }
+
+ #Home .contener .slideshow {
+    position: absolute; 
+    top: 0%; 
+    left: 0%; 
+    width: 100%;
+
+    z-index: -1;
+    overflow: hidden;
+    float: left;
+ }
+
+ #Home .contener .slideshow ul img {
+    position: static;
+    width: 48.25%;
+ }
+
+ #Home .contener .slideshow #horloge {
+    float: left;
+    z-index: 1;
+    position: absolute;
+    padding: 1%;
+    margin-left: 4%;
+    margin-top: 1.3%;
+    background-color:#861d1d8e;
+    color:silver;
+    font-size: 250%;
+    border: 2px solid #444;
+    border-radius: 5%;
+ }
+ 
+ @media screen and (min-width: 1140px) and (max-width: 5000px) {
+   .header {
+      display: none;
+   }
+
+   #Home .contener .slideshow #servers {
+      float: left;
+      position: absolute;
+      z-index: 1;
+      padding: 1%;
+      margin-left: 4%;
+      margin-top: 7.5%;
+      background-color:#861d1d8e;
+      color:silver;
+      font-size: 250%;
+      border: 2px solid #444;
+      border-radius: 5%;
+   }
+
+ }
+
+ @media screen and (min-width: 818px) and (max-width: 1139px) {
+   #Home .contener nav {
+      display: none;
+   }
+
+   #Home .contener .slideshow #servers {
+      float: left;
+      position: absolute;
+      z-index: 1;
+      padding: 1%;
+      margin-left: 4%;
+      margin-top: 10%;
+      background-color:#861d1d8e;
+      color:silver;
+      font-size: 250%;
+      border: 2px solid #444;
+      border-radius: 5%;
+   }
+
+ }
+
+
+ @media screen and (min-width: 200px) and (max-width: 817px) {
+
+   #Home .contener nav {
+      display: none;
+   }
+   #Home .contener .slideshow #servers {
+      float: left;
+      position: absolute;
+      z-index: 1;
+      padding: 1%;
+      margin-left: 4%;
+      margin-top: 20%;
+      background-color:#861d1d8e;
+      color:silver;
+      font-size: 250%;
+      border: 2px solid #444;
+      border-radius: 5%;
+   }
+
+ }
+
+ #Home .contener nav {
+   float: right;
+   margin-top: -51%;
+   text-align: right;
+   position: absolute;
+   margin-left: 70%;
+   width: 25%;
+
+}
+
+#Home .contener nav ul {
+   margin-right: 0%;
+}
+
+#Home .contener nav ul li {
+   text-transform: uppercase;   
+   font-size: 3.5vw;
+   padding: 4%;
+   font-family: Bangers, Arial, Helvetica, sans-serif;
+   
+}
+
+#Home .contener nav ul li a{
+   text-decoration: none;
+   color: #FFF;
+}
+
+#Home .contener nav ul li a:hover {
+   padding-right: 10%;
+   color: aqua;
+}
+
+#Home .contener #LogoDisc {
+   position: absolute;
+   margin-top: -22%;
+   margin-left: 45%;
+   font-size: 12vw;
+   text-transform: uppercase;
+   font-family: Bangers, Arial, Helvetica, sans-serif;
+}
+
+#Home .contener #LogoDisc a {
+   text-decoration: none;
+   color: #FFF;
+}
+
+#Home .contener #LogoDisc a:hover {
+   color: aqua;
+}
+
+
+#CommandPage {
+   width: 100%;
+}
+#CommandPage .contener img {
+   position: static; 
+   top: 50%; 
+   left: 0%; 
+   z-index: -2;
+   width: 100%;
+
+}
+
+#CommandPage .contener #ifloat {
+   position: absolute;
+   margin-top: 57%;
+   margin-left: 30%;
+   width: 40%;
+   z-index: 0;
+}
+
+#VideoPage {
+   width: 100%;
+}
+
+#VideoPage .contener img {
+   position: static; 
+   top: 50%; 
+   left: 0%; 
+   z-index: -1;
+   width: 100%;
+}
+
+#VideoPage .contener iframe {
+   position: absolute;
+   margin-top: 15%;
+   margin-left: -70%;
+   width: 40%;
+   border: 0px;
+}
+
+
+#Bas footer {
+   text-align: center;
+}
+
+#Bas footer #Fond4{
+   position: static; 
+   z-index: -1;
+   width: 100%;
+}
+
+#Bas footer h1 {
+   position: absolute;
+   font-family: 'Comic Sans MS', arial;
+   color: #fff;
+   padding-top: 3.5%;
+   text-align: center;
+   font-size: 300%;
+   margin-top: -22%;
+   margin-left: 45%;
+
+}
+
+#Bas footer #copyright {
+   font-size: x-large;
+   text-align: center;
+   font-weight: bold;
+   padding-top: 1.8%;
+   color: #fff;
+   margin-top: -12%;
+}
+
+#Bas footer #bouton {
+   position: absolute;
+   width: 100%;
+}
+
+#Bas footer button {
+   margin-top: 4%;
+   width: 300px;
+   background: transparent;
+   border: none;
+}
+
+#Bas footer button:hover{
+   border: 1px solid orange;
+}
+
+#Bas footer button:focus {
+   outline: orange 5px auto;
+ }
+
+#Bas footer #by {
+   animation: bounce 7s ease infinite;
+   position: absolute;
+   text-decoration: none;
+   font-family: 'Comic Sans MS', arial;
+   left: 0%;
+   margin-top: 162%;
+ }
